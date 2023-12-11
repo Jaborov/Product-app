@@ -5,7 +5,6 @@ import { cartActions } from '../store/cart.slice';
 
 function Product() {
 	const data = useLoaderData();
-	console.log(<Await resolve={data.data}></Await>);
 	const dispatch = useDispatch();
 	return (
 		<>

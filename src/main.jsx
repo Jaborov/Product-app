@@ -9,7 +9,7 @@ import { store } from './store/store.js';
 import './index.css';
 import axios from 'axios';
 import { PREFIX } from './helpers/API';
-import { Cart } from './pages/Cart.jsx';
+import { Checkout } from './pages/Checkout.jsx';
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -33,8 +33,8 @@ const router = createBrowserRouter([
 				)
 			},
 			{
-				path: '/cart',
-				element: <Cart />
+				path: '/checkout',
+				element: <Checkout />
 			},
 			{
 				path: '/product/:id',

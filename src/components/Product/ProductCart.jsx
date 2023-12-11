@@ -2,11 +2,10 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { cartActions } from '../../store/cart.slice';
 
-
 function ProductCart(product) {
 	const dispatch = useDispatch();
 
-	const add = (e ) => {
+	const add = (e) => {
 		e.preventDefault();
 		dispatch(cartActions.add(product.id));
 	};
@@ -23,7 +22,6 @@ function ProductCart(product) {
 						</div>
 					</div>
 				</div>
-				
 				<div className="flex items-center mt-1 justify-between pr-8 ">
 					<span className="text-xl font-bold ml-5">{product.price}&nbsp;₽</span>
 					<div className="flex">
@@ -33,13 +31,18 @@ function ProductCart(product) {
 				</div>
 				<div className="p-5 flex flex-col gap-3">
 					<div className="flex items-center gap-3">
-						<span className="px-3 py-1 text-xs rounded-full bg-gray-100">{product.category}</span>
+						<span className="px-3 py-1 text-xs rounded-full bg-gray-100">
+							{product.category}
+						</span>
 					</div>
 					<h2 className="font-semibold text-xl overflow-ellipsis overflow-hidden whitespace-nowrap">
 						{product.title}
 					</h2>
 					<div className="mt-5 flex gap-2">
-						<button onClick={add} className="bg-yellow-500/80 hover:bg-yellow-500/90 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+						<button
+							onClick={add}
+							className="bg-yellow-500/80 hover:bg-yellow-500/90 px-6 py-2 rounded-md text-white font-medium tracking-wider transition"
+						>
               Add to cart
 						</button>
 					</div>

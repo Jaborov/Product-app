@@ -26,7 +26,8 @@ export default {
 				secondary: '#F5E6E0'
 			},
 			backgroundImage: {
-				hero: 'url(\'./public/bg_hero.svg\')'
+				hero: 'url(\'./public/bg_hero.svg\')',
+				error: 'url(\'./public/error_page.png\')'
 			}
 		}
 	},

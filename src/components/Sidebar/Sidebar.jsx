@@ -19,17 +19,24 @@ const Sidebar = ({ expad, hadnleClose }) => {
 	const clearCart = () => {
 		dispatch(cartActions.clean());
 	};
-	const total = items.map(i => {
-		const product = cartProducts.find(p => p.id === i.id);
-		if (!product) {
-			return 0;
-		}
-		return i.count * product.price;
-	}).reduce((acc, i) => acc += i, 0);
+	const total = items
+		.map((i) => {
+			const product = cartProducts.find((p) => p.id === i.id);
+			if (!product) {
+				return 0;
+			}
+			return i.count * product.price;
+		})
+		.reduce((acc, i) => (acc += i), 0);
 
 	const getItem = async (id) => {
 		const { data } = await axios.get(`${PREFIX}/${id}`);
 		return data;
+	};
+
+	const clearAfterCheckout = () => {
+		clearCart();
+		hadnleClose();
 	};
 
 	const loadAllItems = async () => {
@@ -48,7 +55,9 @@ const Sidebar = ({ expad, hadnleClose }) => {
 			} w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}
 		>
 			<div className="flex items-center justify-between py-6 border-b">
-				<div className="uppercase text-sm font-semibold">Shopping Bag ({items.reduce((acc, item) => (acc += item.count), 0)})</div>
+				<div className="uppercase text-sm font-semibold">
+          Shopping Bag ({items.reduce((acc, item) => (acc += item.count), 0)})
+				</div>
 				{/* icon */}
 				<div
 					onClick={hadnleClose}
@@ -87,7 +96,8 @@ const Sidebar = ({ expad, hadnleClose }) => {
           View cart
 				</Link>
 				<Link
-					to={'/'}
+					to={'/checkout'}
+					onClick={clearAfterCheckout}
 					className="bg-primary flex p-4 justify-center items-center text-white w-full font-medium"
 				>
           Checkout

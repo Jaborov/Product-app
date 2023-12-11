@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart.slice';
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 function CartItem(product) {
 	const dispatch = useDispatch();
@@ -20,16 +21,21 @@ function CartItem(product) {
 		<div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
 			<div className="w-full min-h-[150px] flex items-center gap-x-4">
 				{/* image */}
-				<div>
+
+				<Link to={`/product/${product.id}`}>
 					<img className="max-w-[80px]" src={product.image} alt="" />
-				</div>
+				</Link>
 				<div className="w-full flex flex-col">
 					{/* title && remove icon */}
 					<div className="flex justify-between mb-2">
 						{/* title */}
-						<div className="text-sm uppercase font-medium max-w-[240px] text-primary hover:underline">
+						<Link
+							to={`/product/${product.id}`}
+							className="text-sm uppercase font-medium max-w-[240px] text-primary hover:underline"
+						>
 							{product.title}
-						</div>
+						</Link>
+
 						{/* remove icon */}
 						<div onClick={remove} className="text-xl cursor-pointer">
 							<IoMdClose className="text-gray-500 hover:text-red-500 transition" />
