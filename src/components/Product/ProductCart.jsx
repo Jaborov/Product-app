@@ -41,7 +41,7 @@ function ProductCart(product) {
 					<div className="mt-5 flex gap-2">
 						<button
 							onClick={add}
-							className="bg-yellow-500/80 hover:bg-yellow-500/90 px-6 py-2 rounded-md text-white font-medium tracking-wider transition"
+							className="bg-yellow-500/80 hover:bg-yellow-500/90 active:bg-red-500 px-6 py-2 rounded-md text-white font-medium tracking-wider transition"
 						>
               Add to cart
 						</button>

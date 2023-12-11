@@ -1,11 +1,13 @@
 import { Suspense } from 'react';
-import { Await, useLoaderData } from 'react-router-dom';
+import { Await, useLoaderData, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cart.slice';
+import { FaArrowCircleLeft } from 'react-icons/fa';
 
 function Product() {
 	const data = useLoaderData();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	return (
 		<>
 			<Suspense
@@ -31,6 +33,9 @@ function Product() {
 									</div>
 									{/* text */}
 									<div className="flex-1 text-center lg:text-left">
+										<button onClick={() => navigate(-1)} className="h-[100px]">
+											<FaArrowCircleLeft className="text-2xl" />
+										</button>
 										<h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
 											{data.title}
 										</h1>
@@ -40,7 +45,7 @@ function Product() {
 										<p className="mb-8">{data.description}</p>
 										<button
 											onClick={() => dispatch(cartActions.add(data.id))}
-											className="bg-primary py-4 px-8 text-white rounded-md"
+											className="bg-primary active:bg-red-500 py-4 px-8 text-white rounded-md"
 										>
                       Add to cart
 										</button>
