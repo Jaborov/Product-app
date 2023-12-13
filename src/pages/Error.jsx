@@ -1,3 +1,6 @@
 export function Error() {
-    return <>Error</>
+	return (
+		<div className="w-full bg-error h-screen bg-no-repeat bg-cover bg-center">
+		</div>
+	);
 }
