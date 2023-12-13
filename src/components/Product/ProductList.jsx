@@ -1,4 +1,4 @@
-import ProductCart from './ProductCart';
+import ProductCard from './ProductCard';
 
 function ProductList({ products }) {
 
@@ -8,7 +8,7 @@ function ProductList({ products }) {
 				<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
 					{products.map((product) => {
 						return (
-							<ProductCart
+							<ProductCard
 								key={product.id}
 								id={product.id}
 								category={product.category}

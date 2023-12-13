@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { cartActions } from '../../store/cart.slice';
 
-function ProductCart(product) {
+function ProductCard(product) {
 	const dispatch = useDispatch();
 	const add = (e) => {
 		e.preventDefault();
@@ -51,4 +51,4 @@ function ProductCart(product) {
 	);
 }
 
-export default ProductCart;
+export default ProductCard;
