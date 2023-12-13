@@ -4,7 +4,6 @@ import { cartActions } from '../../store/cart.slice';
 
 function ProductCart(product) {
 	const dispatch = useDispatch();
-
 	const add = (e) => {
 		e.preventDefault();
 		dispatch(cartActions.add(product.id));

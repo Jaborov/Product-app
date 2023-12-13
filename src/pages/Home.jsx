@@ -41,7 +41,7 @@ function Home() {
 			)}
 			{!isLoading && products.length === 0 && (
 				<section className="h-screen flex justify-center items-center">
-          Не найдено товар по вашему требованию
+          Product matching your requirement was not found
 				</section>
 			)}
 		</div>
