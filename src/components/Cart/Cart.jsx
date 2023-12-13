@@ -4,7 +4,7 @@ import { cartActions } from '../../store/cart.slice';
 
 function Cart() {
 	return (
-		<p>Hello</p>
+		<p>Hello Behruz</p>
 	);
 }
 
