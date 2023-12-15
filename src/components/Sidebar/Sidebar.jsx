@@ -1,14 +1,11 @@
-// import Link
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// improt icon
+import axios from 'axios';
 import { IoMdArrowForward } from 'react-icons/io';
 import { FiTrash2 } from 'react-icons/fi';
-// import components
-import { useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart.slice';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
 import { PREFIX } from '../../helpers/API';
 

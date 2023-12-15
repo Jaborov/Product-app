@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { BsBag } from 'react-icons/bs';
-import { useState, useEffect } from 'react';
 
 export function Navbar({expand, setExpand}) {
 	const items = useSelector((s) => s.cart.items);

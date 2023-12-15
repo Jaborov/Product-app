@@ -1,9 +1,10 @@
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart.slice';
 
 function ProductCard(product) {
 	const dispatch = useDispatch();
+	console.log(product);
 	const add = (e) => {
 		e.preventDefault();
 		dispatch(cartActions.add(product.id));
@@ -15,7 +16,7 @@ function ProductCard(product) {
 					<div className="h-full flex justify-center items-center">
 						<div>
 							<img
-								src={product.image}
+								src={product.image[0]}
 								className="h-[160px] mx-auto my-auto group-hover:scale-110 transition duration-300"
 							/>
 						</div>

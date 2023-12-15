@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter, defer } from 'react-router-dom';
 import Product from './pages/Product';
 import { Error } from './pages/Error';
-import { Menu } from './Layout/Menu';
+import { Menu } from './layout/Menu.jsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 import './index.css';
@@ -12,6 +12,7 @@ import { PREFIX } from './helpers/API';
 import { Checkout } from './pages/Checkout.jsx';
 
 const Home = lazy(() => import('./pages/Home'));
+
 
 const router = createBrowserRouter([
 	{
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
 			{
 				path: '/product/:id',
 				element: <Product />,
-				errorElement: <>Ошибка</>,
+				errorElement:  <Error />,
 				loader: async ({ params }) => {
 					return defer({
 						data: axios
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
 							.then((data) => data)
 							.catch((e) => e)
 					});
+					
 				}
 			}
 		]

@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart.slice';
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
-import { Link } from 'react-router-dom';
 
 function CartItem(product) {
 	const dispatch = useDispatch();
@@ -32,10 +32,10 @@ function CartItem(product) {
 						<Link
 							to={`/product/${product.id}`}
 							className="text-sm uppercase font-medium max-w-[240px] text-primary hover:underline"
+
 						>
 							{product.title}
 						</Link>
-
 						{/* remove icon */}
 						<div onClick={remove} className="text-xl cursor-pointer">
 							<IoMdClose className="text-gray-500 hover:text-red-500 transition" />

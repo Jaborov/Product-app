@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
 import Sidebar from '../components/Sidebar/Sidebar';
-import {useState} from 'react';
 import Footer from '../components/Footer/Footer';
 export function Menu() {
 	const [expandSidebar, setExpandSidebar] = useState(false);

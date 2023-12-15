@@ -1,7 +1,7 @@
 import ProductCard from './ProductCard';
 
-function ProductList({ products }) {
-
+function ProductList({products}) {
+	console.log(products);
 	return (
 		<section className="py-16">
 			<div className="container mx-auto">
@@ -15,15 +15,14 @@ function ProductList({ products }) {
 								title={product.title}
 								price={product.price}
 								description={product.description}
-								rating={product.rating.rate}
-								image={product.image}
+								rating={product.rating}
+								image={product.images}
 							/>
 						);
 					})}
 				</div>
 			</div>
 		</section>
-	
 	);
 }
 
